@@ -33,7 +33,7 @@ export default function HalamanLacakPesanan() {
 
       <form
         onSubmit={cari}
-        className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+        className="mt-8 rounded-2xl kaca p-6"
       >
         <label className={labelInput} htmlFor="kode">
           Kode Pesanan
@@ -51,7 +51,7 @@ export default function HalamanLacakPesanan() {
         </button>
       </form>
 
-      <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-sm text-slate-400">
+      <div className="mt-6 rounded-2xl kaca p-6 text-sm text-slate-400">
         <p className="font-semibold text-white">Kode pesanan hilang?</p>
         <p className="mt-1.5">
           Kirimkan nama dan nomor WhatsApp yang kamu gunakan saat memesan, lalu

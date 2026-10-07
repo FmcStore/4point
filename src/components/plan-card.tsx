@@ -6,10 +6,10 @@ import { kartu, kartuHover } from "@/lib/ui";
 
 const AKSEN: Record<string, { teks: string; bg: string; border: string; grad: string }> = {
   panel: {
-    teks: "text-sky-300",
-    bg: "bg-sky-400/10",
-    border: "border-sky-400/30",
-    grad: "from-sky-500 to-blue-600",
+    teks: "text-brand-300",
+    bg: "bg-brand-400/10",
+    border: "border-brand-400/30",
+    grad: "from-brand-500 to-brand-600",
   },
   minecraft: {
     teks: "text-emerald-300",
@@ -84,7 +84,7 @@ export function PlanCard({ paket }: { paket: Paket }) {
 
       <Link
         href={`/layanan/${paket.slug}`}
-        className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r ${aksen.grad} px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-110`}
+        className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-gradient-to-b ${aksen.grad} px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-black/40 transition duration-300 hover:brightness-110`}
       >
         Pesan Sekarang
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

@@ -145,7 +145,7 @@ export function Dashboard() {
       {
         label: "Diproses",
         nilai: statistik.perStatus["diproses"] ?? 0,
-        warna: "text-sky-300",
+        warna: "text-brand-300",
       },
       {
         label: "Aktif",
@@ -155,7 +155,7 @@ export function Dashboard() {
       {
         label: "Omzet (terverifikasi)",
         nilai: rupiah(statistik.omzet),
-        warna: "text-violet-300",
+        warna: "text-brand-300",
       },
     ],
     [statistik]
@@ -208,10 +208,10 @@ export function Dashboard() {
                 setFilter(f.id);
                 setMemuat(true);
               }}
-              className={`rounded-full border px-4 py-2 text-xs font-semibold transition ${
+              className={`rounded-full border px-4 py-2 text-xs font-semibold transition duration-300 ${
                 filter === f.id
-                  ? "border-transparent bg-gradient-to-r from-sky-500 to-violet-600 text-white"
-                  : "border-white/10 bg-white/5 text-slate-300 hover:border-white/25"
+                  ? "border-white/15 bg-gradient-to-b from-brand-400 to-brand-600 text-white shadow-lg shadow-brand-900/40"
+                  : "border-white/10 bg-white/[0.045] text-slate-300 hover:border-white/25"
               }`}
             >
               {f.label}
@@ -222,7 +222,7 @@ export function Dashboard() {
           value={cari}
           onChange={(e) => setCari(e.target.value)}
           placeholder="Cari kode / nama / WhatsApp..."
-          className="ml-auto w-full rounded-xl border border-white/10 bg-ink-900/80 px-4 py-2.5 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-sky-400/60 sm:w-72"
+          className="ml-auto w-full rounded-xl border border-white/10 bg-ink-900/80 px-4 py-2.5 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-brand-400/60 sm:w-72"
         />
       </div>
 
@@ -296,7 +296,7 @@ export function Dashboard() {
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setTerpilih(null)}
           />
-          <div className="relative flex h-full w-full max-w-lg flex-col overflow-y-auto border-l border-white/10 bg-ink-950 p-6">
+          <div className="relative flex h-full w-full max-w-lg flex-col overflow-y-auto border-l border-white/10 bg-black/80 p-6 backdrop-blur-2xl">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-wider text-slate-500">
@@ -318,7 +318,7 @@ export function Dashboard() {
               </button>
             </div>
 
-            <div className="mt-5 rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm">
+            <div className="mt-5 rounded-xl kaca p-4 text-sm">
               <dl className="grid grid-cols-2 gap-3">
                 <div>
                   <dt className="text-xs text-slate-500">Nama</dt>
@@ -355,7 +355,7 @@ export function Dashboard() {
               </dl>
             </div>
 
-            <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="mt-4 rounded-xl kaca p-4">
               <p className="text-xs uppercase tracking-wider text-slate-500">
                 Item
               </p>
@@ -386,7 +386,7 @@ export function Dashboard() {
               <select
                 value={statusBaru}
                 onChange={(e) => setStatusBaru(e.target.value as StatusId)}
-                className="w-full rounded-xl border border-white/10 bg-ink-900/80 px-4 py-3 text-sm text-slate-100 outline-none focus:border-sky-400/60"
+                className="w-full rounded-xl border border-white/10 bg-ink-900/80 px-4 py-3 text-sm text-slate-100 outline-none focus:border-brand-400/60"
               >
                 {STATUS.map((s) => (
                   <option key={s.id} value={s.id}>
@@ -405,12 +405,12 @@ export function Dashboard() {
                 onChange={(e) => setDetailAkses(e.target.value)}
                 rows={5}
                 placeholder={"Contoh:\nLink Panel: https://panel.3point.id\nEmail: budi@mail.com\nPassword: xxxxx\nServer ID: a1b2c3"}
-                className="w-full resize-y rounded-xl border border-white/10 bg-ink-900/80 px-4 py-3 font-mono text-sm text-slate-100 outline-none placeholder:text-slate-600 focus:border-sky-400/60"
+                className="w-full resize-y rounded-xl border border-white/10 bg-ink-900/80 px-4 py-3 font-mono text-sm text-slate-100 outline-none placeholder:text-slate-600 focus:border-brand-400/60"
               />
             </div>
 
             {notif && (
-              <div className="mt-4 rounded-xl border border-sky-400/30 bg-sky-400/10 p-3.5 text-sm text-sky-200">
+              <div className="mt-4 rounded-xl border border-brand-400/30 bg-brand-400/10 p-3.5 text-sm text-brand-200">
                 {notif}
               </div>
             )}

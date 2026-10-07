@@ -35,9 +35,9 @@ export function FormLogin() {
 
   return (
     <div className="mx-auto w-full max-w-md px-4 py-24 sm:px-6">
-      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+      <div className="rounded-2xl kaca kaca-berat p-8">
         <div className="flex items-center gap-3">
-          <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-sky-400 via-blue-600 to-violet-600 text-lg font-black text-white">
+          <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-400 via-brand-600 to-brand-600 text-lg font-black text-white">
             3
           </span>
           <div>

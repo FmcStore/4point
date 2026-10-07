@@ -1,15 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink-950: #04060d;
-  --color-ink-900: #080d18;
-  --color-ink-800: #0d1424;
-  --color-ink-700: #141d33;
+  /* ============================================================
+     HITAM AMOLED
+     Semua lapisan dasar dibuat hitam murni (#000) supaya piksel
+     layar OLED yang tidak terpakai benar-benar mati (hemat baterai).
+     ============================================================ */
+  --color-ink-950: #000000;
+  --color-ink-900: #06070a;
+  --color-ink-800: #0b0d12;
+  --color-ink-700: #14171e;
 
+  /* ============================================================
+     SATU AKSEN: BIRU
+     Seluruh UI memakai ramp ini saja. Hijau (emerald) sengaja
+     dipertahankan HANYA untuk makna semantik (sukses / WhatsApp),
+     bukan sebagai warna dekoratif.
+     ============================================================ */
+  --color-brand-100: #dbe9ff;
+  --color-brand-200: #bcd6ff;
   --color-brand-300: #9cc5ff;
-  --color-brand-400: #5b9dff;
+  --color-brand-400: #6ba6ff;
   --color-brand-500: #2f7bff;
   --color-brand-600: #1c5fe0;
+  --color-brand-700: #164cb4;
+  --color-brand-800: #123c8f;
+  --color-brand-900: #0d2c68;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -17,10 +33,11 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #000;
 }
 
 body {
-  background-color: #04060d;
+  background-color: #000;
   color: #e2e8f0;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -28,7 +45,7 @@ body {
 }
 
 ::selection {
-  background: rgba(47, 123, 255, 0.35);
+  background: rgba(47, 123, 255, 0.38);
   color: #fff;
 }
 
@@ -37,30 +54,215 @@ body {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #04060d;
+  background: #000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #1a1d24;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #2a2f3a;
 }
 
-/* Latar dekoratif */
-.bg-dekorasi {
-  background-image:
-    radial-gradient(60rem 40rem at 12% -8%, rgba(47, 123, 255, 0.18), transparent 60%),
-    radial-gradient(50rem 34rem at 92% 4%, rgba(139, 92, 246, 0.16), transparent 62%),
-    radial-gradient(46rem 30rem at 50% 108%, rgba(16, 185, 129, 0.1), transparent 65%);
+/* ============================================================
+   LAPISAN CAHAYA DI BELAKANG KACA
+   Kaca (liquid glass) memburamkan apa pun di belakangnya. Di atas
+   latar hitam total tidak ada yang bisa diburamkan, sehingga kaca
+   akan tampak seperti kotak gelap biasa. Orb di bawah ini adalah
+   "lampu" redup (opacity 6-10%) yang membuat blur terlihat,
+   sementara mayoritas layar tetap hitam pekat.
+
+   Hanya `transform` yang dianimasikan agar diproses GPU dan tidak
+   memicu repaint / layout ulang.
+   ============================================================ */
+.orb-latar {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
 }
 
+.orb-latar i {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+}
+
+.orb-latar i:nth-child(1) {
+  width: 46vw;
+  height: 46vw;
+  left: -8vw;
+  top: -10vh;
+  background: #1b6cff;
+  opacity: 0.11;
+  animation: apung 24s ease-in-out infinite;
+}
+
+.orb-latar i:nth-child(2) {
+  width: 40vw;
+  height: 40vw;
+  right: -6vw;
+  top: 8vh;
+  background: #3f8bff;
+  opacity: 0.08;
+  animation: apung 30s ease-in-out infinite reverse;
+}
+
+.orb-latar i:nth-child(3) {
+  width: 44vw;
+  height: 44vw;
+  left: 28vw;
+  bottom: -14vh;
+  background: #164cb4;
+  opacity: 0.07;
+  animation: apung 36s ease-in-out infinite;
+}
+
+@keyframes apung {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, -5%, 0) scale(1.14);
+  }
+}
+
+/* ============================================================
+   LIQUID GLASS
+   Dua tingkat, sengaja dibedakan demi performa:
+   - `.kaca`       : tepi + highlight + bayangan, TANPA blur.
+                     Untuk kartu produk, daftar, tabel (dipakai banyak).
+   - `.kaca-berat` : menambahkan `backdrop-filter` (relatif mahal).
+                     HANYA untuk elemen besar dan sedikit jumlahnya:
+                     header, sidebar lengket, kartu hero, panel login.
+   ============================================================ */
+@layer components {
+  .kaca {
+    position: relative;
+    border-radius: 1rem; /* setara rounded-2xl, bisa ditimpa utility */
+    border: 1px solid rgba(255, 255, 255, 0.085);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.055) 0%,
+      rgba(255, 255, 255, 0.018) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.11),
+      0 22px 55px -34px rgba(0, 0, 0, 0.95);
+  }
+
+  /* Kilau tipis di tepi atas. Hanya 16% tinggi elemen supaya
+     kontras teks di bagian atas kartu tidak turun. */
+  .kaca::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0) 16%
+    );
+  }
+
+  .kaca-berat {
+    border-color: rgba(255, 255, 255, 0.11);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.075) 0%,
+      rgba(255, 255, 255, 0.028) 100%
+    );
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    backdrop-filter: blur(28px) saturate(180%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      0 30px 70px -34px rgba(0, 0, 0, 0.95);
+  }
+
+  .kaca-hover {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.3s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .kaca-hover:hover {
+    transform: translateY(-3px);
+    border-color: rgba(107, 166, 255, 0.3);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      0 30px 60px -30px rgba(47, 123, 255, 0.32);
+  }
+}
+
+/* Perangkat / browser tanpa dukungan backdrop-filter: ganti dengan
+   permukaan semi-opaque supaya keterbacaan tetap aman. */
+@supports not (
+  (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
+  .kaca-berat {
+    background: linear-gradient(
+      180deg,
+      rgba(24, 27, 35, 0.92) 0%,
+      rgba(10, 11, 15, 0.95) 100%
+    );
+  }
+}
+
+/* ============================================================
+   AKSESIBILITAS: hormati preferensi pengguna
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .orb-latar i,
+  .animasi-naik,
+  .animasi-melayang,
+  .animasi-denyut {
+    animation: none !important;
+  }
+
+  .kaca-hover {
+    transition: none;
+  }
+
+  .kaca-hover:hover {
+    transform: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .kaca-berat {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: linear-gradient(
+      180deg,
+      rgba(22, 25, 33, 0.94) 0%,
+      rgba(9, 10, 14, 0.96) 100%
+    );
+  }
+}
+
+/* ============================================================
+   DEKORASI
+   ============================================================ */
 .kisi {
   background-image:
-    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
   background-size: 46px 46px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    #000 40%,
+    transparent 100%
+  );
 }
 
 @keyframes naik {

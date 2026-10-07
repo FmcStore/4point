@@ -31,18 +31,18 @@ export function SiteHeader() {
     <header
       className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
         menempel
-          ? "border-white/10 bg-ink-950/85 backdrop-blur-xl"
+          ? "border-white/10 bg-black/60 backdrop-blur-xl"
           : "border-transparent bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <span className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-sky-400 via-blue-600 to-violet-600 text-base font-black text-white shadow-lg shadow-sky-500/30">
+          <span className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-400 via-brand-600 to-brand-600 text-base font-black text-white shadow-lg shadow-brand-500/30">
             3
           </span>
           <span className="text-lg font-bold tracking-tight text-white">
             {site.nama}
-            <span className="text-sky-400">.</span>
+            <span className="text-brand-400">.</span>
           </span>
         </Link>
 
@@ -56,10 +56,10 @@ export function SiteHeader() {
               <Link
                 key={n.ke}
                 href={n.ke}
-                className={`rounded-lg px-3.5 py-2 text-sm font-medium transition ${
+                className={`rounded-lg border px-3.5 py-2 text-sm font-medium transition duration-300 ${
                   aktif
-                    ? "bg-white/[0.07] text-white"
-                    : "text-slate-400 hover:bg-white/5 hover:text-slate-100"
+                    ? "border-white/15 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]"
+                    : "border-transparent text-slate-400 hover:border-white/10 hover:bg-white/5 hover:text-slate-100"
                 }`}
               >
                 {n.label}
@@ -71,7 +71,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <Link
             href="/pesanan"
-            className="hidden rounded-xl border border-white/10 bg-white/5 px-3.5 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 sm:inline-flex"
+            className="kaca hidden rounded-xl px-3.5 py-2 text-sm font-medium text-slate-200 transition duration-300 hover:border-white/25 sm:inline-flex"
           >
             Lacak Pesanan
           </Link>
@@ -79,7 +79,7 @@ export function SiteHeader() {
           <Link
             href="/keranjang"
             aria-label="Keranjang"
-            className="relative grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:bg-white/10"
+            className="kaca relative grid h-10 w-10 place-items-center rounded-xl text-slate-200 transition duration-300 hover:border-white/25"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="9" cy="20" r="1.4" />
@@ -87,7 +87,7 @@ export function SiteHeader() {
               <path d="M2 3h2.2l2.3 12.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L21 7H5" />
             </svg>
             {siap && jumlah > 0 && (
-              <span className="absolute -right-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-br from-sky-400 to-violet-500 px-1 text-[11px] font-bold text-white">
+              <span className="absolute -right-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-br from-brand-400 to-brand-500 px-1 text-[11px] font-bold text-white">
                 {jumlah}
               </span>
             )}
@@ -109,7 +109,7 @@ export function SiteHeader() {
             type="button"
             onClick={() => setBukaMenu((v) => !v)}
             aria-label="Menu"
-            className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-200 lg:hidden"
+            className="kaca grid h-10 w-10 place-items-center rounded-xl text-slate-200 lg:hidden"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               {bukaMenu ? (
@@ -123,7 +123,7 @@ export function SiteHeader() {
       </div>
 
       {bukaMenu && (
-        <div className="border-t border-white/10 bg-ink-950/95 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-white/10 bg-black/80 backdrop-blur-xl lg:hidden">
           <nav className="mx-auto flex w-full max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
             {NAV.map((n) => (
               <Link

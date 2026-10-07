@@ -4,7 +4,7 @@ import { btnSekunder, btnUtama } from "@/lib/ui";
 export default function HalamanTidakDitemukan() {
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col items-center px-4 py-28 text-center sm:px-6">
-      <span className="bg-gradient-to-r from-sky-400 to-violet-500 bg-clip-text text-7xl font-black text-transparent">
+      <span className="bg-gradient-to-r from-brand-400 to-brand-500 bg-clip-text text-7xl font-black text-transparent">
         404
       </span>
       <h1 className="mt-4 text-2xl font-extrabold text-white sm:text-3xl">

@@ -91,7 +91,7 @@ export default async function HalamanDetailPesanan({
     <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <Link
         href="/layanan"
-        className="text-xs text-slate-500 transition hover:text-sky-300"
+        className="text-xs text-slate-500 transition hover:text-brand-300"
       >
         ← Kembali ke daftar layanan
       </Link>
@@ -138,7 +138,7 @@ export default async function HalamanDetailPesanan({
                     <span
                       className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-xs font-bold ${
                         sudah
-                          ? "bg-gradient-to-br from-sky-500 to-violet-600 text-white"
+                          ? "bg-gradient-to-br from-brand-500 to-brand-600 text-white"
                           : "border border-white/15 bg-white/5 text-slate-500"
                       }`}
                     >
@@ -156,7 +156,7 @@ export default async function HalamanDetailPesanan({
                     <span
                       className={`mt-3 hidden h-1 rounded-full sm:block ${
                         i < tahapSekarang
-                          ? "bg-gradient-to-r from-sky-500 to-violet-600"
+                          ? "bg-gradient-to-r from-brand-500 to-brand-600"
                           : "bg-white/10"
                       }`}
                     />
@@ -309,7 +309,7 @@ export default async function HalamanDetailPesanan({
               Kamu bisa membuka kembali status pesanan kapan saja di menu{" "}
               <Link
                 href="/pesanan"
-                className="font-semibold text-sky-300 underline-offset-2 hover:underline"
+                className="font-semibold text-brand-300 underline-offset-2 hover:underline"
               >
                 Lacak Pesanan
               </Link>{" "}

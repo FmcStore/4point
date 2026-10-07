@@ -6,16 +6,16 @@ export function SiteFooter() {
   const tahun = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 border-t border-white/10 bg-ink-950">
+    <footer className="mt-24 border-t border-white/10 bg-black shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-1">
           <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-sky-400 via-blue-600 to-violet-600 text-base font-black text-white">
+            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-400 via-brand-600 to-brand-600 text-base font-black text-white">
               3
             </span>
             <span className="text-lg font-bold text-white">
               {site.nama}
-              <span className="text-sky-400">.</span>
+              <span className="text-brand-400">.</span>
             </span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-slate-400">
@@ -25,7 +25,7 @@ export function SiteFooter() {
             <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
               Pembayaran QRIS
             </span>
-            <span className="rounded-full border border-sky-400/30 bg-sky-400/10 px-3 py-1 text-xs font-medium text-sky-300">
+            <span className="rounded-full border border-brand-400/30 bg-brand-400/10 px-3 py-1 text-xs font-medium text-brand-300">
               Panel Pterodactyl
             </span>
           </div>
@@ -36,11 +36,11 @@ export function SiteFooter() {
             Navigasi
           </h4>
           <ul className="mt-4 space-y-2.5 text-sm text-slate-400">
-            <li><Link className="transition hover:text-sky-300" href="/">Beranda</Link></li>
-            <li><Link className="transition hover:text-sky-300" href="/layanan">Semua Layanan</Link></li>
-            <li><Link className="transition hover:text-sky-300" href="/#harga">Daftar Harga</Link></li>
-            <li><Link className="transition hover:text-sky-300" href="/#faq">FAQ</Link></li>
-            <li><Link className="transition hover:text-sky-300" href="/pesanan">Lacak Pesanan</Link></li>
+            <li><Link className="transition hover:text-brand-300" href="/">Beranda</Link></li>
+            <li><Link className="transition hover:text-brand-300" href="/layanan">Semua Layanan</Link></li>
+            <li><Link className="transition hover:text-brand-300" href="/#harga">Daftar Harga</Link></li>
+            <li><Link className="transition hover:text-brand-300" href="/#faq">FAQ</Link></li>
+            <li><Link className="transition hover:text-brand-300" href="/pesanan">Lacak Pesanan</Link></li>
           </ul>
         </div>
 
@@ -52,7 +52,7 @@ export function SiteFooter() {
             {KATEGORI.map((k) => (
               <li key={k.id}>
                 <Link
-                  className="transition hover:text-sky-300"
+                  className="transition hover:text-brand-300"
                   href={`/layanan?kategori=${k.id}`}
                 >
                   {k.nama}
@@ -60,12 +60,12 @@ export function SiteFooter() {
               </li>
             ))}
             <li>
-              <Link className="transition hover:text-sky-300" href="/layanan?kategori=panel">
+              <Link className="transition hover:text-brand-300" href="/layanan?kategori=panel">
                 Panel Bot & Website
               </Link>
             </li>
             <li>
-              <Link className="transition hover:text-sky-300" href="/layanan?kategori=minecraft">
+              <Link className="transition hover:text-brand-300" href="/layanan?kategori=minecraft">
                 Server Minecraft
               </Link>
             </li>
@@ -88,13 +88,13 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a className="transition hover:text-sky-300" href={`mailto:${site.email}`}>
+              <a className="transition hover:text-brand-300" href={`mailto:${site.email}`}>
                 {site.email}
               </a>
             </li>
             <li>{site.jamOperasional}</li>
             <li>
-              <Link className="transition hover:text-sky-300" href="/admin">
+              <Link className="transition hover:text-brand-300" href="/admin">
                 Login Admin
               </Link>
             </li>

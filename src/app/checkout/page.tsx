@@ -93,7 +93,7 @@ export default function HalamanCheckout() {
   if (!siap) {
     return (
       <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="h-64 animate-pulse rounded-2xl border border-white/10 bg-white/[0.03]" />
+        <div className="h-64 animate-pulse rounded-2xl kaca" />
       </div>
     );
   }
@@ -126,7 +126,7 @@ export default function HalamanCheckout() {
         onSubmit={kirim}
         className="mt-10 grid gap-6 lg:grid-cols-[1.5fr_1fr] lg:items-start"
       >
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+        <div className="rounded-2xl kaca p-6">
           <h2 className="text-lg font-bold text-white">Data Pemesan</h2>
 
           <div className="mt-5 grid gap-5 sm:grid-cols-2">
@@ -204,7 +204,7 @@ export default function HalamanCheckout() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border border-sky-400/25 bg-sky-400/[0.07] p-4 text-sm text-sky-200">
+          <div className="mt-6 rounded-xl border border-brand-400/25 bg-brand-400/[0.07] p-4 text-sm text-brand-200">
             <b>Pembayaran manual.</b> Setelah pesanan dibuat, kamu akan menerima
             QRIS dan kode pesanan. Lakukan pembayaran lalu konfirmasi ke CS
             melalui WhatsApp.
@@ -217,7 +217,7 @@ export default function HalamanCheckout() {
           )}
         </div>
 
-        <aside className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 lg:sticky lg:top-24">
+        <aside className="rounded-2xl kaca kaca-berat p-6 lg:sticky lg:top-24">
           <h2 className="text-lg font-bold text-white">Ringkasan Pesanan</h2>
 
           <ul className="mt-5 space-y-3">

@@ -38,9 +38,9 @@ export default function HalamanKeranjang() {
       </p>
 
       {!siap ? (
-        <div className="mt-10 h-40 animate-pulse rounded-2xl border border-white/10 bg-white/[0.03]" />
+        <div className="mt-10 h-40 animate-pulse rounded-2xl kaca" />
       ) : baris.length === 0 ? (
-        <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-12 text-center">
+        <div className="mt-10 rounded-2xl kaca p-12 text-center">
           <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-white/5 text-slate-400">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="9" cy="20" r="1.4" />
@@ -65,13 +65,13 @@ export default function HalamanKeranjang() {
             {baris.map(({ it, paket, subtotal, normal }) => (
               <div
                 key={it.id}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-5"
+                className="rounded-2xl kaca p-5"
               >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
                     <Link
                       href={`/layanan/${paket.slug}`}
-                      className="text-base font-bold text-white transition hover:text-sky-300"
+                      className="text-base font-bold text-white transition hover:text-brand-300"
                     >
                       {paket.nama}
                     </Link>
@@ -165,7 +165,7 @@ export default function HalamanKeranjang() {
             </div>
           </div>
 
-          <aside className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 lg:sticky lg:top-24">
+          <aside className="rounded-2xl kaca kaca-berat p-6 lg:sticky lg:top-24">
             <h2 className="text-lg font-bold text-white">Ringkasan</h2>
 
             <div className="mt-5 space-y-2.5 text-sm">

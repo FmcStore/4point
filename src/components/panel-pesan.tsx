@@ -39,7 +39,7 @@ export function PanelPesan({ paket }: { paket: Paket }) {
   }
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+    <div className="rounded-2xl kaca kaca-berat p-6">
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-wider text-slate-500">
@@ -66,7 +66,7 @@ export function PanelPesan({ paket }: { paket: Paket }) {
                 onClick={() => setDurasi(d.bulan)}
                 className={`rounded-xl border px-3.5 py-3 text-left transition ${
                   aktif
-                    ? "border-sky-400/60 bg-sky-500/10 ring-1 ring-sky-400/40"
+                    ? "border-brand-400/60 bg-brand-500/10 ring-1 ring-brand-400/40"
                     : "border-white/10 bg-white/5 hover:border-white/25"
                 }`}
               >

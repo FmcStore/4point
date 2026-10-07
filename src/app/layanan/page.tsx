@@ -55,10 +55,10 @@ export default async function HalamanLayanan({
             <Link
               key={t.id}
               href={t.id === "semua" ? "/layanan" : `/layanan?kategori=${t.id}`}
-              className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition ${
+              className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition duration-300 ${
                 aktif
-                  ? "border-transparent bg-gradient-to-r from-sky-500 via-blue-600 to-violet-600 text-white shadow-lg shadow-sky-500/25"
-                  : "border-white/10 bg-white/5 text-slate-300 hover:border-white/25 hover:bg-white/10"
+                  ? "border-white/15 bg-gradient-to-b from-brand-400 to-brand-600 text-white shadow-lg shadow-brand-900/40"
+                  : "border-white/10 bg-white/[0.045] text-slate-300 hover:border-white/25"
               }`}
             >
               {t.label}
@@ -68,7 +68,7 @@ export default async function HalamanLayanan({
       </div>
 
       {kategoriAktif && (
-        <div className="mx-auto mt-8 flex max-w-3xl items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+        <div className="mx-auto mt-8 flex max-w-3xl items-center gap-4 rounded-2xl kaca p-5">
           <Image
             src={kategoriAktif.gambar}
             alt={kategoriAktif.nama}
@@ -86,7 +86,7 @@ export default async function HalamanLayanan({
         ))}
       </div>
 
-      <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center">
+      <div className="mt-12 rounded-2xl kaca p-6 text-center">
         <h2 className="text-lg font-bold text-white">Butuh paket custom?</h2>
         <p className="mx-auto mt-2 max-w-xl text-sm text-slate-400">
           Kami bisa menyesuaikan kapasitas RAM, CPU, disk, dan durasi sesuai
@@ -94,7 +94,7 @@ export default async function HalamanLayanan({
         </p>
         <Link
           href="/#harga"
-          className="mt-4 inline-flex text-sm font-semibold text-sky-300 underline-offset-4 hover:underline"
+          className="mt-4 inline-flex text-sm font-semibold text-brand-300 underline-offset-4 hover:underline"
         >
           Lihat daftar harga lengkap
         </Link>

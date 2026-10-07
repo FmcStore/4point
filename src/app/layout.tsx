@@ -50,7 +50,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${geistSans.variable} ${geistMono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-ink-950 text-slate-200 antialiased">
-        <div className="pointer-events-none fixed inset-0 -z-10 bg-dekorasi" />
+        {/* “Lampu” redup di belakang kaca. Tanpa ini, backdrop-filter pada
+            latar hitam total tidak menghasilkan efek kaca apa pun. */}
+        <div className="orb-latar" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+        </div>
         <CartProvider>
           <SiteHeader />
           <main className="flex-1">{children}</main>

@@ -56,17 +56,17 @@ export default async function HalamanDetailPaket({
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <nav className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-        <Link href="/" className="transition hover:text-sky-300">
+        <Link href="/" className="transition hover:text-brand-300">
           Beranda
         </Link>
         <span>/</span>
-        <Link href="/layanan" className="transition hover:text-sky-300">
+        <Link href="/layanan" className="transition hover:text-brand-300">
           Layanan
         </Link>
         <span>/</span>
         <Link
           href={`/layanan?kategori=${paket.kategori}`}
-          className="transition hover:text-sky-300"
+          className="transition hover:text-brand-300"
         >
           {kategori?.singkat}
         </Link>
@@ -80,7 +80,7 @@ export default async function HalamanDetailPaket({
             className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold ${
               hijau
                 ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-300"
-                : "border-sky-400/30 bg-sky-400/10 text-sky-300"
+                : "border-brand-400/30 bg-brand-400/10 text-brand-300"
             }`}
           >
             {kategori?.nama}
@@ -153,7 +153,7 @@ export default async function HalamanDetailPaket({
                     href={`/layanan/${p.slug}`}
                     className={`rounded-xl border px-3.5 py-2 text-sm font-medium transition ${
                       aktif
-                        ? "border-sky-400/60 bg-sky-500/15 text-white"
+                        ? "border-brand-400/60 bg-brand-500/15 text-white"
                         : "border-white/10 bg-white/5 text-slate-300 hover:border-white/25 hover:text-white"
                     }`}
                   >

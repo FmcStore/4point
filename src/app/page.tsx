@@ -119,7 +119,7 @@ function GridHarga({
 }) {
   const warna =
     aksen === "sky"
-      ? "border-sky-400/30 bg-sky-400/[0.07] text-sky-300"
+      ? "border-brand-400/30 bg-brand-400/[0.07] text-brand-300"
       : "border-emerald-400/30 bg-emerald-400/[0.07] text-emerald-300";
 
   return (
@@ -174,7 +174,7 @@ export default function Beranda() {
 
             <h1 className="mt-5 text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
               Hosting Panel{" "}
-              <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-200 via-brand-400 to-brand-600 bg-clip-text text-transparent">
                 Pterodactyl
               </span>{" "}
               Termurah
@@ -213,8 +213,8 @@ export default function Beranda() {
           </div>
 
           <div className="relative animasi-naik">
-            <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-tr from-sky-500/25 via-blue-600/10 to-violet-600/25 blur-3xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-2 shadow-2xl shadow-black/50">
+            <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-tr from-brand-500/20 via-brand-500/5 to-brand-500/15 blur-3xl" />
+            <div className="relative overflow-hidden rounded-3xl kaca p-2 shadow-2xl shadow-black/50">
               <Image
                 src={site.heroImage}
                 alt={`${site.nama} - hosting panel Pterodactyl`}
@@ -225,14 +225,14 @@ export default function Beranda() {
               />
             </div>
 
-            <div className="animasi-melayang absolute -bottom-5 -left-4 hidden rounded-2xl border border-white/10 bg-ink-900/90 p-4 shadow-xl backdrop-blur sm:block">
+            <div className="animasi-melayang absolute -bottom-5 -left-4 hidden rounded-2xl kaca kaca-berat p-4 sm:block">
               <p className="text-xs text-slate-400">Panel Pterodactyl</p>
               <p className="mt-0.5 text-lg font-bold text-white">
                 Rp1.000<span className="text-xs font-medium text-slate-400">/GB/bulan</span>
               </p>
             </div>
 
-            <div className="absolute -right-3 -top-4 hidden rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 shadow-xl backdrop-blur sm:block">
+            <div className="absolute -right-3 -top-4 hidden rounded-2xl kaca kaca-berat border-emerald-400/30 px-4 py-3 sm:block">
               <p className="text-xs font-medium text-emerald-300">Server MC mulai</p>
               <p className="text-lg font-bold text-white">Rp13.000</p>
             </div>
@@ -263,14 +263,14 @@ export default function Beranda() {
               >
                 <div
                   className={`absolute -right-16 -top-16 h-48 w-48 rounded-full blur-3xl ${
-                    sky ? "bg-sky-500/20" : "bg-emerald-500/20"
+                    sky ? "bg-brand-500/15" : "bg-emerald-500/15"
                   }`}
                 />
                 <div className="relative">
                   <div className="flex items-center gap-4">
                     <span
                       className={`grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-2xl border bg-white/5 ${
-                        sky ? "border-sky-400/30" : "border-emerald-400/30"
+                        sky ? "border-brand-400/30" : "border-emerald-400/30"
                       }`}
                     >
                       <Image
@@ -284,7 +284,7 @@ export default function Beranda() {
                     <span
                       className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold ${
                         sky
-                          ? "border-sky-400/30 bg-sky-400/10 text-sky-300"
+                          ? "border-brand-400/30 bg-brand-400/10 text-brand-300"
                           : "border-emerald-400/30 bg-emerald-400/10 text-emerald-300"
                       }`}
                     >
@@ -384,7 +384,7 @@ export default function Beranda() {
           Server Minecraft mulai dari Rp13.000. Butuh kapasitas lain atau paket
           custom?{" "}
           <a
-            className="font-semibold text-sky-300 underline-offset-4 hover:underline"
+            className="font-semibold text-brand-300 underline-offset-4 hover:underline"
             href={waLink("Halo 3Point, saya mau tanya paket custom.")}
             target="_blank"
             rel="noopener noreferrer"
@@ -409,7 +409,7 @@ export default function Beranda() {
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {UNGGULAN.map((u) => (
             <div key={u.judul} className={`${kartu} p-6 transition hover:border-white/20`}>
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-sky-500/20 to-violet-500/20 text-sky-300 ring-1 ring-inset ring-white/10">
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-500/12 text-brand-300 ring-1 ring-inset ring-white/10">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
                   <path d={u.ikon} />
                 </svg>
@@ -437,7 +437,7 @@ export default function Beranda() {
               <span className="absolute right-5 top-5 text-4xl font-black text-white/[0.07]">
                 {i + 1}
               </span>
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-sky-500 to-violet-600 text-sm font-bold text-white">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 text-sm font-bold text-white">
                 {i + 1}
               </span>
               <h3 className="mt-4 font-semibold text-white">{a.judul}</h3>
@@ -467,7 +467,7 @@ export default function Beranda() {
               Konfirmasi Pembayaran
             </a>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-ink-900/60 p-6">
+          <div className="rounded-2xl border border-white/10 bg-black/40 p-6">
             <p className="text-xs uppercase tracking-wider text-slate-500">
               Pembayaran diterima
             </p>
@@ -518,7 +518,7 @@ export default function Beranda() {
 
       {/* ============ CTA ============ */}
       <section className="mx-auto w-full max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-sky-600/25 via-blue-700/15 to-violet-700/25 p-8 text-center sm:p-14">
+        <div className="relative overflow-hidden rounded-3xl kaca kaca-berat bg-gradient-to-br from-brand-600/20 via-transparent to-brand-700/20 p-8 text-center sm:p-14">
           <div className="pointer-events-none absolute inset-0 kisi opacity-60" />
           <div className="relative">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
