@@ -18,8 +18,8 @@ export const site = {
   //  GANTI dengan nomor WhatsApp Anda (format internasional,
   //  tanpa tanda + dan tanpa spasi). Contoh: 6281234567890
   // ==========================================================
-  whatsapp: "6281234567890",
-  whatsappTampil: "+62 812-3456-7890",
+  whatsapp: "6282130693625",
+  whatsappTampil: "+62 821-3069-3625",
 
   email: "support@3point.id",
   jamOperasional: "CS online 24/7",
@@ -35,10 +35,11 @@ export const site = {
    * "minta QR ke CS via WhatsApp".
    */
   qris: {
-    payload: "",
-    gambar: "",
-    merchant: "3POINT HOSTING",
-    nmid: "",
+    payload:
+      "00020101021126570011ID.DANA.WWW011893600915303404385802090340438580303UMI51440014ID.CO.QRIS.WWW0215ID10265701036830303UMI5204481453033605802ID5909Wahyushop6015Kota Pematang S61052113763043904",
+    gambar: "https://cdn.aoxi.my.id/file/R97yeZMu.jpg",
+    merchant: "Wahyushop",
+    nmid: "ID1026570103683",
   },
 
   sosial: {
