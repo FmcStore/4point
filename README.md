@@ -1,6 +1,6 @@
-# 3Point — Website Jualan Hosting Panel Pterodactyl
+# 4Point — Website Jualan Hosting Panel Pterodactyl
 
-Website toko hosting **3Point** untuk menjual **Panel Pterodactyl** dan **Panel
+Website toko hosting **4Point** untuk menjual **Panel Pterodactyl** dan **Panel
 Khusus Minecraft**, lengkap dengan keranjang, checkout, pesanan tersimpan di
 database, halaman lacak pesanan, dan dashboard admin.
 
@@ -70,7 +70,7 @@ Buka `src/data/site.ts` dan ubah:
 ```ts
 whatsapp: "6281234567890",        // format 62..., tanpa + dan spasi
 whatsappTampil: "+62 812-3456-7890",
-email: "support@3point.id",
+email: "support@4point.id",
 ```
 
 Nomor ini dipakai untuk semua tombol CS dan tombol konfirmasi pembayaran.
@@ -83,7 +83,7 @@ Masih di `src/data/site.ts`, bagian `qris`. Isi **salah satu** saja:
 qris: {
   payload: "00020101021226...",  // string QRIS merchant -> QR dibuat otomatis
   gambar: "/qris.png",           // atau gambar QRIS di folder public/
-  merchant: "3POINT HOSTING",
+  merchant: "4POINT HOSTING",
   nmid: "ID1234567890123",
 }
 ```
@@ -110,10 +110,10 @@ Salin `.env.example` menjadi `.env.local` lalu ubah:
 ```env
 ADMIN_PASSWORD=password-rahasia-anda
 ADMIN_SESSION_SECRET=teks-acak-panjang-bebas
-DB_PATH=./data/3point.db
+DB_PATH=./data/4point.db
 ```
 
-> Password bawaan adalah `3point-admin`. **Wajib diganti** sebelum online.
+> Password bawaan adalah `4point-admin`. **Wajib diganti** sebelum online.
 
 Admin login juga dibatasi 8 percobaan gagal per 5 menit.
 
@@ -157,7 +157,7 @@ src/
    └─ format.ts                Format Rupiah & tanggal
 ```
 
-Database tersimpan di `data/3point.db` (folder ini diabaikan git).
+Database tersimpan di `data/4point.db` (folder ini diabaikan git).
 Menghapus folder `data/` akan mengosongkan seluruh pesanan.
 
 ---

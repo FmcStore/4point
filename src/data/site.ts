@@ -1,15 +1,15 @@
 /**
  * ============================================================
- *  KONFIGURASI UTAMA WEBSITE 3POINT
+ *  KONFIGURASI UTAMA WEBSITE 4POINT
  *  Ubah nilai di bawah ini sesuai data Anda.
  * ============================================================
  */
 export const site = {
-  nama: "3Point",
-  namaPanjang: "3Point Hosting",
+  nama: "4Point",
+  namaPanjang: "4Point Hosting",
   tagline: "Hosting Panel Pterodactyl Termurah & Tercepat",
   deskripsi:
-    "3Point menyediakan Panel Pterodactyl untuk bot, website, dan server Minecraft. Harga mulai Rp1.000/GB, aktivasi cepat, dan CS online 24 jam.",
+    "4Point menyediakan Panel Pterodactyl untuk bot, website, dan server Minecraft. Harga mulai Rp1.000/GB, aktivasi cepat, dan CS online 24 jam.",
 
   /** Gambar hero / banner utama */
   heroImage: "https://cdn.aoxi.my.id/file/USxJ2f3f.jpg",
@@ -21,7 +21,7 @@ export const site = {
   whatsapp: "6282130693625",
   whatsappTampil: "+62 821-3069-3625",
 
-  email: "support@3point.id",
+  email: "support@4point.id",
   jamOperasional: "CS online 24/7",
 
   /**

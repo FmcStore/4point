@@ -1,6 +1,6 @@
 /**
  * ============================================================
- *  DAFTAR PRODUK & HARGA 3POINT
+ *  DAFTAR PRODUK & HARGA 4POINT
  *  Semua harga di sini dalam Rupiah per BULAN.
  * ============================================================
  */

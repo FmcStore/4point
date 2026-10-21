@@ -8,7 +8,7 @@ import { badge, judulSeksi, subSeksi } from "@/lib/ui";
 export const metadata: Metadata = {
   title: "Semua Layanan",
   description:
-    "Daftar lengkap paket Panel Pterodactyl dan Panel Minecraft 3Point beserta harganya.",
+    "Daftar lengkap paket Panel Pterodactyl dan Panel Minecraft 4Point beserta harganya.",
 };
 
 type Filter = "semua" | "panel" | "minecraft";

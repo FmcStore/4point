@@ -4,7 +4,7 @@ import { DatabaseSync } from "node:sqlite";
 
 /**
  * Database memakai modul bawaan Node.js (`node:sqlite`), jadi tidak perlu
- * install server database terpisah. File database tersimpan di ./data/3point.db
+ * install server database terpisah. File database tersimpan di ./data/4point.db
  */
 const globalForDb = globalThis as unknown as { __tigaPointDb?: DatabaseSync };
 
@@ -15,7 +15,7 @@ function lokasiDatabase(): string {
       ? dariEnv
       : path.resolve(/* turbopackIgnore: true */ process.cwd(), dariEnv);
   }
-  return path.join(process.cwd(), "data", "3point.db");
+  return path.join(process.cwd(), "data", "4point.db");
 }
 
 function migrasi(db: DatabaseSync): void {

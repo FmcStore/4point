@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!paket) return { title: "Paket tidak ditemukan" };
   return {
     title: `${paket.nama} — ${rupiah(paket.harga)}/bulan`,
-    description: `${paket.nama} 3Point: RAM ${paket.ram} GB, CPU ${paket.cpu}%, disk ${paket.disk} GB. Harga ${rupiah(paket.harga)} per bulan.`,
+    description: `${paket.nama} 4Point: RAM ${paket.ram} GB, CPU ${paket.cpu}%, disk ${paket.disk} GB. Harga ${rupiah(paket.harga)} per bulan.`,
   };
 }
 

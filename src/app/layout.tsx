@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "hosting murah",
     "panel minecraft",
     "server minecraft murah",
-    "3point",
+    "4point",
     "panel bot whatsapp",
     "hosting panel indonesia",
   ],

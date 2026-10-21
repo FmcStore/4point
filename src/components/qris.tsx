@@ -54,7 +54,7 @@ export async function Qris({ total }: { total: number }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={sumber}
-              alt="QRIS pembayaran 3Point"
+              alt="QRIS pembayaran 4Point"
               className="h-auto w-full"
             />
           </div>

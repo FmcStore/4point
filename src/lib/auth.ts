@@ -1,16 +1,16 @@
 import crypto from "node:crypto";
 import { cookies } from "next/headers";
 
-export const NAMA_COOKIE = "3point_admin";
+export const NAMA_COOKIE = "4point_admin";
 
 export function passwordAdmin(): string {
-  return process.env.ADMIN_PASSWORD?.trim() || "3point-admin";
+  return process.env.ADMIN_PASSWORD?.trim() || "4point-admin";
 }
 
 function rahasia(): string {
   return (
     process.env.ADMIN_SESSION_SECRET?.trim() ||
-    `3point-${passwordAdmin()}-session`
+    `4point-${passwordAdmin()}-session`
   );
 }
 

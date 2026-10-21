@@ -43,7 +43,7 @@ export function FormLogin() {
           <div>
             <h1 className="text-xl font-bold text-white">Dashboard Admin</h1>
             <p className="text-xs text-slate-400">
-              Masuk untuk mengelola pesanan 3Point
+              Masuk untuk mengelola pesanan 4Point
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export function FormLogin() {
         </form>
 
         <p className="mt-5 text-center text-xs text-slate-500">
-          Password default: <span className="font-mono">3point-admin</span> —
+          Password default: <span className="font-mono">4point-admin</span> —
           ubah melalui variabel lingkungan <span className="font-mono">ADMIN_PASSWORD</span>.
         </p>
       </div>

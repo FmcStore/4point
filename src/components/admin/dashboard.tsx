@@ -404,7 +404,7 @@ export function Dashboard() {
                 value={detailAkses}
                 onChange={(e) => setDetailAkses(e.target.value)}
                 rows={5}
-                placeholder={"Contoh:\nLink Panel: https://panel.3point.id\nEmail: budi@mail.com\nPassword: xxxxx\nServer ID: a1b2c3"}
+                placeholder={"Contoh:\nLink Panel: https://panel.4point.id\nEmail: budi@mail.com\nPassword: xxxxx\nServer ID: a1b2c3"}
                 className="w-full resize-y rounded-xl border border-white/10 bg-ink-900/80 px-4 py-3 font-mono text-sm text-slate-100 outline-none placeholder:text-slate-600 focus:border-brand-400/60"
               />
             </div>

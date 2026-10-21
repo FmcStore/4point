@@ -27,7 +27,7 @@ export const STATUS: StatusInfo[] = [
     id: "diproses",
     label: "Diproses",
     keterangan:
-      "Pembayaran sudah dikonfirmasi. Panel Anda sedang disiapkan oleh tim 3Point.",
+      "Pembayaran sudah dikonfirmasi. Panel Anda sedang disiapkan oleh tim 4Point.",
     kelas: "text-brand-300 bg-brand-400/10 border-brand-400/30",
     dot: "bg-brand-400",
   },

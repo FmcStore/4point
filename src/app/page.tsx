@@ -88,7 +88,7 @@ const FAQ = [
   },
   {
     t: "Apakah server Minecraft mendukung Java dan Bedrock?",
-    j: "Ya. Panel Minecraft 3Point mendukung Java Edition maupun Bedrock Edition, termasuk Paper, Spigot, Fabric, Forge, dan PocketMine.",
+    j: "Ya. Panel Minecraft 4Point mendukung Java Edition maupun Bedrock Edition, termasuk Paper, Spigot, Fabric, Forge, dan PocketMine.",
   },
   {
     t: "Bagaimana cara pembayarannya?",
@@ -104,7 +104,7 @@ const FAQ = [
   },
   {
     t: "Apakah boleh dipakai untuk bot atau website?",
-    j: "Boleh. Panel Biasa 3Point dirancang untuk kebutuhan bot WhatsApp/Telegram, Node.js, Python, dan website statis maupun dinamis.",
+    j: "Boleh. Panel Biasa 4Point dirancang untuk kebutuhan bot WhatsApp/Telegram, Node.js, Python, dan website statis maupun dinamis.",
   },
 ];
 
@@ -338,7 +338,7 @@ export default function Beranda() {
             <span className={badge}>Paket Terlaris</span>
             <h2 className={`${judulSeksi} mt-4`}>Paling Sering Dipesan</h2>
             <p className={subSeksi}>
-              Pilihan favorit pelanggan 3Point dengan harga terbaik.
+              Pilihan favorit pelanggan 4Point dengan harga terbaik.
             </p>
           </div>
           <Link href="/layanan" className={btnSekunder}>
@@ -385,7 +385,7 @@ export default function Beranda() {
           custom?{" "}
           <a
             className="font-semibold text-brand-300 underline-offset-4 hover:underline"
-            href={waLink("Halo 3Point, saya mau tanya paket custom.")}
+            href={waLink("Halo 4Point, saya mau tanya paket custom.")}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -459,7 +459,7 @@ export default function Beranda() {
               Payment gateway otomatis sedang disiapkan dan akan segera hadir.
             </p>
             <a
-              href={waLink("Halo 3Point, saya sudah melakukan pembayaran QRIS.")}
+              href={waLink("Halo 4Point, saya sudah melakukan pembayaran QRIS.")}
               target="_blank"
               rel="noopener noreferrer"
               className={`${btnHijau} mt-5`}
@@ -533,7 +533,7 @@ export default function Beranda() {
                 Mulai Pesan Sekarang
               </Link>
               <a
-                href={waLink("Halo 3Point, saya mau tanya dulu sebelum pesan.")}
+                href={waLink("Halo 4Point, saya mau tanya dulu sebelum pesan.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={btnSekunder}

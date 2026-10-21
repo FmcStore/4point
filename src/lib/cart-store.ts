@@ -18,7 +18,7 @@ export interface SnapshotKeranjang {
   siap: boolean;
 }
 
-const KUNCI = "3point-keranjang-v1";
+const KUNCI = "4point-keranjang-v1";
 const MAKS_QTY = 20;
 
 /** Nilai awal yang stabil (dipakai sisi server & saat hidrasi). */
