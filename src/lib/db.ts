@@ -6,7 +6,7 @@ import { DatabaseSync } from "node:sqlite";
  * Database memakai modul bawaan Node.js (`node:sqlite`), jadi tidak perlu
  * install server database terpisah. File database tersimpan di ./data/4point.db
  */
-const globalForDb = globalThis as unknown as { __tigaPointDb?: DatabaseSync };
+const globalForDb = globalThis as unknown as { __empatPointDb?: DatabaseSync };
 
 function lokasiDatabase(): string {
   const dariEnv = process.env.DB_PATH?.trim();
@@ -67,8 +67,8 @@ function buka(): DatabaseSync {
 }
 
 export function getDb(): DatabaseSync {
-  if (!globalForDb.__tigaPointDb) {
-    globalForDb.__tigaPointDb = buka();
+  if (!globalForDb.__empatPointDb) {
+    globalForDb.__empatPointDb = buka();
   }
-  return globalForDb.__tigaPointDb;
+  return globalForDb.__empatPointDb;
 }
